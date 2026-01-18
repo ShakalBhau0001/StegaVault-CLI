@@ -144,51 +144,84 @@ This will display all available modules and usage instructions.
 
 ---
 
-## 🧭 CLI Usage Examples
+## 🧪 CLI Usage Examples
 
-### 🔐 File Encryption
+> Syntax:
+> python main.py <module> [options]
 
+---
+
+### 📁 File Encryption
+
+**Encrypt file (short flags)**
 ```bash
 python main.py file -i secret.pdf -p mypass123 -e
 ```
 
-### 🔓 File Decryption
+**Encrypt file (long flags)**
+```bash
+python main.py file --input secret.pdf --password mypass123 --encrypt
+```
 
+**Decrypt file**
 ```bash
 python main.py file -i secret.pdf.enc -p mypass123 -d
 ```
 
 ---
 
-### 🖼️ Image Steganography
+### 🖼️ Image Steganography (PNG)
 
-**Embed message**
-
+**Embed message into image**
 ```bash
-python main.py image --image cover.png --password 1234 --message "Hello Stego" --embed
+python main.py image -i cover.png -m "Hello Stego" -p 1234 -e
 ```
 
-**Extract message**
-
+**Extract message from image**
 ```bash
-python main.py image --image stego.png --password 1234 --extract
+python main.py image -i stego.png -p 1234 -x
 ```
 
 ---
 
-### 🔊 Audio Steganography
+### 🔊 Audio Steganography (WAV)
 
-**Embed message**
-
+**Embed message into audio**
 ```bash
-python main.py audio --audio carrier.wav --password 1234 --message "Hidden Audio Msg" --embed
+python main.py audio -i clean.wav -m "Hello Audio" -p 12345 -e
 ```
 
-**Extract message**
-
+**Extract message from audio**
 ```bash
-python main.py audio --audio stego.wav --password 1234 --extract
+python main.py audio -i stego.wav -p 12345 -x
 ```
+
+---
+
+### 🆘 Help Commands
+
+**Global help**
+```bash
+python main.py --help
+```
+
+**Module-specific help**
+```bash
+python main.py file --help
+python main.py image --help
+python main.py audio --help
+```
+
+---
+
+### ⚠️ Important Notes
+
+- `file`, `image`, `audio` are **modules**, not flags  
+- Flags are **case-sensitive**
+- Use:
+  - `-e / --embed` for hiding data
+  - `-x / --extract` for extraction
+  - `-e / --encrypt` and `-d / --decrypt` for files
 
 ---
 
