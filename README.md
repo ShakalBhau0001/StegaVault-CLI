@@ -256,6 +256,7 @@ Do **not** use it for protecting high‑value or life‑critical data.
 ## 🪪 Author
 
 > Developer: **Shakal Bhau**
+
 > GitHub: **[ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
 ---
