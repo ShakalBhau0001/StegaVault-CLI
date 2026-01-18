@@ -146,66 +146,129 @@ This will display all available modules and usage instructions.
 
 ## 🧪 CLI Usage Examples
 
-> Syntax:
+> **Syntax**
 > python main.py <module> [options]
+
+Modules:
+
+* `file`   → File encryption / decryption
+* `image`  → Image steganography (PNG)
+* `audio`  → Audio steganography (WAV)
 
 ---
 
-### 📁 File Encryption
+## 📁 File Encryption
 
-**Encrypt file (short flags)**
+### 🔐 ENCODE / ENCRYPT FILE
+
+**Encrypt (short flags)**
+
 ```bash
 python main.py file -i secret.pdf -p mypass123 -e
 ```
 
-**Encrypt file (long flags)**
+**Encrypt (long flags)**
+
 ```bash
 python main.py file --input secret.pdf --password mypass123 --encrypt
 ```
 
-**Decrypt file**
+---
+
+### 🔓 DECODE / DECRYPT FILE
+
+**Decrypt (short flags)**
+
 ```bash
 python main.py file -i secret.pdf.enc -p mypass123 -d
 ```
 
+**Decrypt (long flags)**
+
+```bash
+python main.py file --input secret.pdf.enc --password mypass123 --decrypt
+```
+
 ---
 
-### 🖼️ Image Steganography (PNG)
+## 🖼️ Image Steganography (PNG)
 
-**Embed message into image**
+### 🧬 ENCODE / EMBED MESSAGE
+
+**Embed (short flags)**
+
 ```bash
 python main.py image -i cover.png -m "Hello Stego" -p 1234 -e
 ```
 
-**Extract message from image**
+**Embed (long flags)**
+
+```bash
+python main.py image --image cover.png --message "Hello Stego" --password 1234 --embed
+```
+
+---
+
+### 📤 DECODE / EXTRACT MESSAGE
+
+**Extract (short flags)**
+
 ```bash
 python main.py image -i stego.png -p 1234 -x
 ```
 
+**Extract (long flags)**
+
+```bash
+python main.py image --image stego.png --password 1234 --extract
+```
+
 ---
 
-### 🔊 Audio Steganography (WAV)
+## 🔊 Audio Steganography (WAV)
 
-**Embed message into audio**
+### 🧬 ENCODE / EMBED MESSAGE
+
+**Embed (short flags)**
+
 ```bash
 python main.py audio -i clean.wav -m "Hello Audio" -p 12345 -e
 ```
 
-**Extract message from audio**
+**Embed (long flags)**
+
 ```bash
-python main.py audio -i stego.wav -p 12345 -x
+python main.py audio --audio clean.wav --message "Hello Audio" --password 12345 --embed
 ```
 
 ---
 
-### 🆘 Help Commands
+### 📤 DECODE / EXTRACT MESSAGE
+
+**Extract (short flags)**
+
+```bash
+python main.py audio -i stego.wav -p 12345 -x
+```
+
+**Extract (long flags)**
+
+```bash
+python main.py audio --audio stego.wav --password 12345 --extract
+```
+
+---
+
+## 🆘 Help Commands
 
 **Global help**
+
 ```bash
 python main.py --help
 ```
 
-**Module-specific help**
+**Module help**
+
 ```bash
 python main.py file --help
 python main.py image --help
@@ -214,14 +277,14 @@ python main.py audio --help
 
 ---
 
-### ⚠️ Important Notes
+## ⚠️ Important Notes
 
-- `file`, `image`, `audio` are **modules**, not flags  
+- `file`, `image`, `audio` are **modules**, not flags
+- Module name must come **immediately after** `main.py`
 - Flags are **case-sensitive**
-- Use:
-  - `-e / --embed` for hiding data
-  - `-x / --extract` for extraction
-  - `-e / --encrypt` and `-d / --decrypt` for files
+- Short and long flags both work
+- Encode = input → output
+- Decode = stego/encrypted file → original data
 
 ---
 
