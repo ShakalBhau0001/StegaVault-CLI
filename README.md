@@ -13,6 +13,15 @@ All operations are performed **locally**, with **zero network usage**, ensuring 
 
 ---
 
+## 🖥️ Looking for a GUI Version?
+
+If you prefer a clean, beginner-friendly graphical interface instead of terminal commands:
+👉 **StegaVault-GUI** provides the same core features with a modern desktop UI built using CustomTkinter.
+
+> 🔗 GUI Repository: **[StegaVault-GUI](https://github.com/ShakalBhau0001/StegaVault-GUI)**
+
+---
+
 ## ✨ Key Philosophy
 
 StegaVault‑CLI follows three strict principles:
