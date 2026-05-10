@@ -335,3 +335,11 @@ Do **not** use it for protecting high‑value or life‑critical data.
 ---
 
 > “Strong security doesn’t need a GUI — it needs discipline.”
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+---
